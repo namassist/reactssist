@@ -1,5 +1,12 @@
 /* Global CSS */
-body {
+main {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+/* Main CSS */
+body.index {
   background-image: url("../img/pattern.jpg");
   font-family: "Slabo 27px", serif;
   font-size: 1rem;
@@ -7,17 +14,6 @@ body {
   padding: 0;
 }
 
-ul {
-  list-style: none;
-  display: flex;
-}
-
-a {
-  text-decoration: none;
-  margin-right: 25px;
-}
-
-/* Main CSS */
 header {
   width: 100%;
   background-color: white;
@@ -27,6 +23,16 @@ header {
   top: 0;
 }
 
+.list-nav {
+  list-style: none;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  margin-right: 25px;
+}
+
 .content {
   width: 75%;
   margin: 0px auto;
@@ -34,6 +40,7 @@ header {
   background-color: white;
   padding: 20px;
 }
+
 .content h1 {
   text-align: center;
 }
@@ -42,6 +49,7 @@ header {
   margin-top: 50px;
   padding: 5px;
 }
+
 .article-list div {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 50px;
@@ -55,4 +63,24 @@ footer {
   color: white;
   text-align: center;
   height: 60px;
+}
+
+/* About CSS */
+.title {
+  text-align: center;
+}
+
+/* Contact CSS */
+.contact-us h1 {
+  text-align: center;
+}
+
+.contact ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+tr td:first-child {
+  vertical-align: bottom;
+  width: 150px;
 }

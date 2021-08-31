@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
   </head>
   <body>
     <main>
@@ -14,37 +15,57 @@
           <ul>
             <li><b>Kantor:</b> di jalan belum jadi</li>
             <li><b>Nomor Telepon:</b> 08XX-XXXX-XXXX</li>
-            <li><b>email:</b> email@contoh.com</li>
+            <li><b>Email:</b> email@contoh.com</li>
           </ul>
         </div>
         <div class="form-contact">
           <h1>Kirimkan Pesan</h1>
           <form action="">
-            <div class="input-group">
-              <label for="nama">Nama</label>
-              <input type="text" name="nama" id="nama" />
-            </div>
-            <div class="input-group">
-              <label for="email">Email</label>
-              <input type="text" name="email" id="email" />
-            </div>
-            <div class="input-group">
-              <label for="gender">Jenis Kelamin</label>
-              <input type="text" name="gender" id="gender" />
-            </div>
-            <div class="input-group">
-              <label for="messages">Pesan anda</label>
-              <textarea
-                name="messages"
-                id="messages"
-                cols="50"
-                rows="5"
-              ></textarea>
-            </div>
+            <table>
+              <tr>
+                <td><label for="nama">Nama</label></td>
+                <td><input type="text" name="nama" id="nama" /></td>
+              </tr>
+              <tr>
+                <td><label for="email">Email</label></td>
+                <td><input type="text" name="email" id="email" /></td>
+              </tr>
+              <tr>
+                <td><label for="gender">Jenis Kelamin</label></td>
+                <td>
+                  <input type="radio" name="gender" value="laki" />Laki-laki
+                </td>
+              </tr>
+              <tr>
+                <td><label for="gender"></label></td>
+                <td>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="perempuan"
+                  />Perempuan
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="messages">Pesan anda</label>
+                </td>
+                <td>
+                  <textarea
+                    name="messages"
+                    id="messages"
+                    cols="50"
+                    rows="5"
+                  ></textarea>
+                </td>
+              </tr>
+            </table>
+            <div class="input-group"></div>
             <button>Kirim</button>
           </form>
         </div>
       </section>
     </main>
+    <a href="index.html"><button>Kembali Ke Index</button></a>
   </body>
 </html>
