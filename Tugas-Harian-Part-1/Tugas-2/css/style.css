@@ -1,0 +1,58 @@
+/* Global CSS */
+body {
+  background-image: url("../img/pattern.jpg");
+  font-family: "Slabo 27px", serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  margin-right: 25px;
+}
+
+/* Main CSS */
+header {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.content {
+  width: 75%;
+  margin: 0px auto;
+  margin-top: 30px;
+  background-color: white;
+  padding: 20px;
+}
+.content h1 {
+  text-align: center;
+}
+
+.article-list {
+  margin-top: 50px;
+  padding: 5px;
+}
+.article-list div {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(5, 5, 5);
+  position: fixed;
+  bottom: 0;
+  color: white;
+  text-align: center;
+  height: 60px;
+}
