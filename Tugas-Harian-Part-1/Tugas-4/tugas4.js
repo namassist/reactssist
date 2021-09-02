@@ -1,4 +1,5 @@
 // Soal 1
+console.log("--- Soal 1 ---");
 console.log("LOOPING PERTAMA");
 var i = 1;
 while (i <= 20) {
@@ -16,9 +17,9 @@ while (i >= 1) {
   }
   i--;
 }
-console.log("");
 
 // Soal 2
+console.log("--- Soal 2 ---");
 for (var i = 1; i <= 20; i++) {
   if (i % 3 == 0 && i % 2 == 1) {
     console.log(i + " - I Love Coding");
@@ -28,9 +29,9 @@ for (var i = 1; i <= 20; i++) {
     console.log(i + " - Santai");
   }
 }
-console.log("");
 
 // Soal 3
+console.log("--- Soal 3 ---");
 var output = "";
 
 for (var i = 0; i < 7; i++) {
@@ -40,9 +41,9 @@ for (var i = 0; i < 7; i++) {
   output += "\n";
 }
 console.log(output);
-console.log("");
 
 // Soal 4
+console.log("--- Soal 4 ---");
 var kalimat = [
   "aku",
   "saya",
@@ -56,10 +57,10 @@ kalimat.shift();
 kalimat.splice(1, 1);
 
 var arr = kalimat.join(" ");
-console.log(arr);
-console.log("");
+console.log('"' + arr + '"');
 
 // Soal 5
+console.log("--- Soal 5 ---");
 var sayuran = [];
 sayuran.push(
   "Kangkung",
