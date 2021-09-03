@@ -64,31 +64,31 @@ var dataBuah = [
   {
     nama: "Nanas",
     warna: "kuning",
-    "ada bijinya": false,
+    adaBijinya: false,
     harga: 9000,
   },
   {
     nama: "Jeruk",
     warna: "Oranye",
-    "ada bijinya": true,
+    adaBijinya: true,
     harga: 8000,
   },
   {
     nama: "Semangka",
     warna: "Hijau & Merah",
-    "ada bijinya": true,
+    adaBijinya: true,
     harga: 10000,
   },
   {
     nama: "Pisang",
     warna: "kuning",
-    "ada bijinya": false,
+    adaBijinya: false,
     harga: 5000,
   },
 ];
 
 var filterBuah = dataBuah.filter(function (buah) {
-  return !buah["ada bijinya"];
+  return !buah.adaBijinya;
 });
 
 console.log("--- Soal 4 ---");
