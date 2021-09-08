@@ -9,12 +9,14 @@ filterBooksPromise(true, 40)
     console.log(err.message);
   });
 
-// bukunya tidak berwarna dan jumlah halamannya 250 (gunakan async/await untuk kondisi ini)
 async function filterBooks() {
   try {
+    // bukunya tidak berwarna dan jumlah halamannya 250
     const booksUncolorfull = await filterBooksPromise(false, 250);
-    const booksColorfull = await filterBooksPromise(true, 30);
     console.log(booksUncolorfull);
+
+    // bukunya berwarna dan jumlah halamannya 30
+    const booksColorfull = await filterBooksPromise(true, 30);
     console.log(booksColorfull);
   } catch (err) {
     console.log(err.message);
