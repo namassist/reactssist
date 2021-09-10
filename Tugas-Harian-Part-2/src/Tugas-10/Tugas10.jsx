@@ -1,5 +1,7 @@
 // Library
 import React, { useState, useEffect } from "react";
+// CSS
+import "../index.css";
 // Components
 import Section from "../components/Section";
 import Container from "../components/Container";
@@ -32,7 +34,7 @@ const Tugas10 = () => {
       </Section>
     );
   } else {
-    return <></>;
+    return null;
   }
 };
 
