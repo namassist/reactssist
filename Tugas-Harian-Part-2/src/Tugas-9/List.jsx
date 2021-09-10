@@ -5,9 +5,7 @@ const List = ({ name, type }) => {
   return (
     <div className="form-check">
       <input type={type} value="" id="todo" />
-      <label className="form-check-label" for="todo">
-        {name}
-      </label>
+      <label className="form-check-label">{name}</label>
     </div>
   );
 };

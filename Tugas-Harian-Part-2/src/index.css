@@ -9,7 +9,7 @@ body {
 }
 
 section {
-  width: 40%;
+  width: 35%;
   margin: 0 auto;
 }
 
@@ -18,7 +18,7 @@ section {
 }
 
 .card {
-  margin-bottom: 50px;
+  margin-top: 20px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), -5px -5px 5px rgba(0, 0, 0, 0.1);
 }
 
