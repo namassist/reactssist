@@ -8,16 +8,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.card {
-  width: 35%;
+section {
+  width: 40%;
   margin: 0 auto;
-  margin-top: 50px;
-  background-color: white;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .container {
   padding: 20px;
+}
+
+.card {
+  margin-bottom: 50px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), -5px -5px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo-section {
@@ -40,6 +42,11 @@ body {
 .title-section p {
   margin-top: 0;
   margin-bottom: 5px;
+}
+
+.form-check {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 button {

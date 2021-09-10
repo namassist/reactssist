@@ -1,11 +1,17 @@
+// Library
 import React from "react";
-import Logo from "./assets/logo.png";
-import List from "./components/List/List";
+// Components
+import Section from "../components/Section";
+import Container from "../components/Container";
+import List from "./List";
+// Assets
+import Logo from "../assets/logo.png";
+import "../index.css";
 
-const App = () => {
+const Tugas9 = () => {
   return (
-    <section className="card">
-      <div className="container">
+    <Section myClass="card">
+      <Container>
         <div className="logo-section">
           <img src={Logo} alt="logo-jabarcodingcamp" />
         </div>
@@ -21,9 +27,9 @@ const App = () => {
           <List name="Belajar ReactJS Advance" type="checkbox" />
           <button type="submit">Send</button>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 
-export default App;
+export default Tugas9;
