@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 50px;
+}
+
+.header {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+
+tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+button:first-child {
+  margin-right: 5px;
+}
+
+form {
+  padding: 20px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-group:last-child {
+  justify-content: end;
+}
+
+label {
+  font-weight: bold;
+}

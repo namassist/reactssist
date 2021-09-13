@@ -1,7 +1,7 @@
 // Library
 import React from "react";
 // Components
-import Section from "../components/Section";
+import Layout from "../components/Layout";
 import Container from "../components/Container";
 import List from "./List";
 // Assets
@@ -10,7 +10,7 @@ import "../index.css";
 
 const Tugas9 = () => {
   return (
-    <Section myClass="card">
+    <Layout myClass="card">
       <Container>
         <div className="logo-section">
           <img src={Logo} alt="logo-jabarcodingcamp" />
@@ -28,7 +28,7 @@ const Tugas9 = () => {
           <button type="submit">Send</button>
         </div>
       </Container>
-    </Section>
+    </Layout>
   );
 };
 

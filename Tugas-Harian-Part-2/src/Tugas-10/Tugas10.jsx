@@ -1,9 +1,11 @@
 // Library
 import React, { useState, useEffect } from "react";
+
 // CSS
 import "../index.css";
+
 // Components
-import Section from "../components/Section";
+import Layout from "../components/Layout";
 import Container from "../components/Container";
 
 const Tugas10 = () => {
@@ -22,7 +24,7 @@ const Tugas10 = () => {
 
   if (countdown > 0) {
     return (
-      <Section myClass="my-clock">
+      <Layout myClass="my-clock">
         <Container>
           <div className="clock">
             <h1>Now At : {time}</h1>
@@ -31,7 +33,7 @@ const Tugas10 = () => {
             <h4>Countdown: {countdown}</h4>
           </div>
         </Container>
-      </Section>
+      </Layout>
     );
   } else {
     return null;

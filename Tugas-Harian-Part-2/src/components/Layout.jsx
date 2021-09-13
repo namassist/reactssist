@@ -1,8 +1,8 @@
 import React from "react";
 import "../index.css";
 
-const Section = ({ children, myClass }) => {
+const Layout = ({ children, myClass }) => {
   return <section className={myClass}>{children} </section>;
 };
 
-export default Section;
+export default Layout;
