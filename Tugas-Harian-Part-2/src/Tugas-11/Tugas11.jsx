@@ -137,6 +137,7 @@ const Tugas11 = () => {
                   name="beratTotal"
                   onChange={handleChange}
                   value={input.beratTotal}
+                  min="2000"
                 />
               </div>
               <div className="form-group">
