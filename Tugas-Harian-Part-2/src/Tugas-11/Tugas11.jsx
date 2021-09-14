@@ -12,8 +12,8 @@ const Tugas11 = () => {
 
   const [input, setInput] = useState({
     nama: "",
-    hargaTotal: "",
-    beratTotal: "",
+    hargaTotal: 0,
+    beratTotal: 0,
   });
 
   const [currentIndex, setCurrentIndex] = useState(-1);
@@ -41,8 +41,8 @@ const Tugas11 = () => {
 
     setInput({
       nama: "",
-      hargaTotal: "",
-      beratTotal: "",
+      hargaTotal: 0,
+      beratTotal: 0,
     });
   };
 
@@ -123,7 +123,7 @@ const Tugas11 = () => {
                 <label htmlFor="harga">Harga Total: </label>
                 <input
                   required
-                  type="text"
+                  type="number"
                   name="hargaTotal"
                   onChange={handleChange}
                   value={input.hargaTotal}
