@@ -42,17 +42,17 @@ const Tugas12 = () => {
     if (currentId === null) {
       axios
         .post(`http://backendexample.sanbercloud.com/api/student-scores`, input)
-        .then((res) => {
-          let mahasiswa = res.data;
-          setdaftarMahasiswa([
-            ...daftarMahasiswa,
-            {
-              id: mahasiswa.id,
-              name: mahasiswa.name,
-              course: mahasiswa.course,
-              score: mahasiswa.score,
-            },
-          ]);
+        .then(() => {
+          setdaftarMahasiswa([...daftarMahasiswa, input]);
+          // setdaftarMahasiswa([
+          //   ...daftarMahasiswa,
+          //   {
+          //     id: mahasiswa.id,
+          //     name: mahasiswa.name,
+          //     course: mahasiswa.course,
+          //     score: mahasiswa.score,
+          //   },
+          // ]);
         });
     } else {
       axios
@@ -63,7 +63,7 @@ const Tugas12 = () => {
         .then(() => {
           // let mahasiswa = daftarMahasiswa.find((el) => el.id === currentId);
           // mahasiswa = input;
-          let newMahasiswa = daftarMahasiswa.find((obj) =>
+          daftarMahasiswa.find((obj) =>
             obj.id === currentId ? { ...obj, input } : obj
           );
           setdaftarMahasiswa([...daftarMahasiswa]);
