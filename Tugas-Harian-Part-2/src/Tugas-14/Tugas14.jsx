@@ -18,8 +18,6 @@ const Tugas14 = () => {
     history.push("/tugas14/create");
   };
 
-  console.log(changeColor);
-
   const handleChangeColor = () => {
     setChangeColor(!changeColor);
   };
@@ -27,8 +25,12 @@ const Tugas14 = () => {
   return (
     <MahasiswaProvider>
       <div className="wrapper">
-        <button type="button" onClick={handleChangeColor}>
-          Ganti Warna
+        <button
+          type="button"
+          onClick={handleChangeColor}
+          className="changeColorButton"
+        >
+          Change Navbar To Dark Theme
         </button>
         <div className="container">
           <div className="header">

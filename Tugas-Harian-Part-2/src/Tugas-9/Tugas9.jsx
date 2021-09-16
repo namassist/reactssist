@@ -6,7 +6,7 @@ import Container from "../components/Container";
 import List from "./List";
 // Assets
 import Logo from "../assets/logo.png";
-import "../index.css";
+import "./Tugas9.css";
 
 const Tugas9 = () => {
   return (

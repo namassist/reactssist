@@ -65,46 +65,50 @@ const MahasiswaForm = () => {
   };
 
   return (
-    <div className="bottom-content">
-      <div className="header">
-        <h1>Form Nilai Mahasiswa</h1>
+    <div className="wrapper">
+      <div className="container">
+        <div className="content">
+          <div className="header">
+            <h1>Form Nilai Mahasiswa</h1>
+          </div>
+          <form action="" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Nama : </label>
+              <input
+                required
+                type="text"
+                name="name"
+                onChange={handleChange}
+                value={input.name}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="course">Mata Kuliah : </label>
+              <input
+                required
+                type="text"
+                name="course"
+                onChange={handleChange}
+                value={input.course}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="score">Nilai :</label>
+              <input
+                required
+                type="number"
+                name="score"
+                onChange={handleChange}
+                value={input.score}
+                max="100"
+              />
+            </div>
+            <div className="form-group">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <form action="" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Nama : </label>
-          <input
-            required
-            type="text"
-            name="name"
-            onChange={handleChange}
-            value={input.name}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="course">Mata Kuliah : </label>
-          <input
-            required
-            type="text"
-            name="course"
-            onChange={handleChange}
-            value={input.course}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="score">Nilai :</label>
-          <input
-            required
-            type="number"
-            name="score"
-            onChange={handleChange}
-            value={input.score}
-            max="100"
-          />
-        </div>
-        <div className="form-group">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
     </div>
   );
 };

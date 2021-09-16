@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 // CSS
+import "./Tugas10.css";
 import "../index.css";
 
 // Components

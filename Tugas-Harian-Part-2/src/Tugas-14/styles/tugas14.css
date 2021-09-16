@@ -9,10 +9,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.wrapper .changeColorButton {
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .container {
-  padding: 50px;
+  padding: 10px 20px;
+}
+
+.content button {
+  margin-top: 20px;
 }
 
 .header {
