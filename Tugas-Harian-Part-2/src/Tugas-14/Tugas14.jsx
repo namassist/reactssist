@@ -1,10 +1,7 @@
 // Library
 import React, { useContext } from "react";
 import { useHistory } from "react-router";
-import {
-  MahasiswaProvider,
-  MahasiswaContext,
-} from "../Tugas-13/MahasiswaContext";
+import { MahasiswaContext } from "../Tugas-13/MahasiswaContext";
 // Components
 import MahasiswaList from "./components/MahasiswaList";
 // CSS
@@ -23,28 +20,26 @@ const Tugas14 = () => {
   };
 
   return (
-    <MahasiswaProvider>
-      <div className="wrapper">
-        <button
-          type="button"
-          onClick={handleChangeColor}
-          className="changeColorButton"
-        >
-          Change Navbar To Dark Theme
-        </button>
-        <div className="container">
-          <div className="header">
-            <h1>Daftar Nilai Mahasiswa</h1>
-          </div>
-          <div className="content">
-            <button type="button" onClick={handleClick}>
-              Buat Data Nilai Mahasiswa Baru
-            </button>
-            <MahasiswaList />
-          </div>
+    <div className="wrapper">
+      <button
+        type="button"
+        onClick={handleChangeColor}
+        className="changeColorButton"
+      >
+        Change Navbar To Dark Theme
+      </button>
+      <div className="container">
+        <div className="header">
+          <h1>Daftar Nilai Mahasiswa</h1>
+        </div>
+        <div className="content">
+          <button type="button" onClick={handleClick}>
+            Buat Data Nilai Mahasiswa Baru
+          </button>
+          <MahasiswaList />
         </div>
       </div>
-    </MahasiswaProvider>
+    </div>
   );
 };
 

@@ -64,6 +64,10 @@ const MahasiswaForm = () => {
     history.push("/tugas14");
   };
 
+  const handleReturn = () => {
+    history.push("/tugas14");
+  };
+
   return (
     <div className="wrapper">
       <div className="container">
@@ -104,6 +108,9 @@ const MahasiswaForm = () => {
               />
             </div>
             <div className="form-group">
+              <button type="button" onClick={handleReturn}>
+                Kembali
+              </button>
               <button type="submit">Submit</button>
             </div>
           </form>
