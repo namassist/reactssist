@@ -84,7 +84,7 @@ const Tugas11 = () => {
               <tbody>
                 {daftarBuah.map((buah, index) => {
                   return (
-                    <tr>
+                    <tr key={index}>
                       <td>{index + 1}</td>
                       <td>{buah.nama}</td>
                       <td>{buah.hargaTotal}</td>

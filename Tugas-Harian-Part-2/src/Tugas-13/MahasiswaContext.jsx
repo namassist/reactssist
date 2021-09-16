@@ -5,14 +5,13 @@ export const MahasiswaContext = createContext();
 
 export const MahasiswaProvider = (props) => {
   const [dataMahasiswa, setDataMahasiswa] = useState([]);
-
   const [input, setInput] = useState({
     name: "",
     course: "",
     score: 0,
   });
-
   const [currentId, setCurrentId] = useState(null);
+  const [changeColor, setChangeColor] = useState(null);
 
   const fetchData = async () => {
     try {
@@ -94,6 +93,8 @@ export const MahasiswaProvider = (props) => {
         setInput,
         currentId,
         setCurrentId,
+        changeColor,
+        setChangeColor,
         functions,
       }}
     >
