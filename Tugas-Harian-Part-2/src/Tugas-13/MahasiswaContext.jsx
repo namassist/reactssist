@@ -1,87 +1,142 @@
-import React, { useState, createContext } from "react";
 import axios from "axios";
+import React, { useState, createContext } from "react";
+import { useHistory } from "react-router";
+import { message } from "antd";
 
 export const MahasiswaContext = createContext();
 
 export const MahasiswaProvider = (props) => {
+  let history = useHistory();
   const [dataMahasiswa, setDataMahasiswa] = useState([]);
   const [input, setInput] = useState({
-    name: "",
+    nama: "",
     course: "",
     score: 0,
   });
-  const [currentId, setCurrentId] = useState(null);
-  const [changeColor, setChangeColor] = useState(null);
+  const [currentId, setCurrentId] = useState(-1);
+  const [fetchStatus, setFetchStatus] = useState(false);
 
   const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        `http://backendexample.sanbercloud.com/api/student-scores`
-      );
-      const data = response.data;
-      setDataMahasiswa(data);
-    } catch (error) {
-      console.log(error.message);
+    let result = await axios.get(
+      `http://backendexample.sanbercloud.com/api/student-scores`
+    );
+    let data = result.data;
+    console.log(data);
+    setDataMahasiswa(
+      data.map((e, index) => {
+        let indexScore = getScore(e.score);
+        return {
+          no: index + 1,
+          id: e.id,
+          name: e.name,
+          score: e.score,
+          course: e.course,
+          indexScore: indexScore,
+        };
+      })
+    );
+  };
+
+  const fetchById = async (idMahasiswa) => {
+    let res = await axios.get(
+      `http://backendexample.sanbercloud.com/api/student-scores/${idMahasiswa}`
+    );
+    let data = res.data;
+    setInput({
+      id: data.id,
+      nama: data.name,
+      course: data.course,
+      score: data.score,
+    });
+    setCurrentId(data.id);
+  };
+
+  const getScore = (score) => {
+    if (score >= 80) {
+      return "A";
+    } else if (score >= 70 && score < 80) {
+      return "B";
+    } else if (score >= 60 && score < 70) {
+      return "C";
+    } else if (score >= 50 && score < 60) {
+      return "D";
+    } else {
+      return "E";
     }
   };
 
   const functionSubmit = () => {
     axios
-      .post(`http://backendexample.sanbercloud.com/api/student-scores`, input)
-      .then(() => {
-        setDataMahasiswa([...dataMahasiswa, input]);
+      .post(`http://backendexample.sanbercloud.com/api/student-scores`, {
+        name: input.nama,
+        course: input.course,
+        score: input.score,
+      })
+      .then((res) => {
+        let data = res.data;
+        setDataMahasiswa([
+          ...dataMahasiswa,
+          {
+            id: data.id,
+            name: data.name,
+            score: data.score,
+            course: data.course,
+          },
+        ]);
+        success("Data Berhasil Ditambah!");
+        history.push("/tugas15");
       });
   };
 
-  const functionUpdate = () => {
+  const functionUpdate = (currentId) => {
     axios
       .put(
         `http://backendexample.sanbercloud.com/api/student-scores/${currentId}`,
-        input
+        {
+          name: input.nama,
+          course: input.course,
+          score: input.score,
+        }
+      )
+      .then((res) => {
+        let newDataMahasiswa = dataMahasiswa.find((e) => e.id === currentId);
+        newDataMahasiswa.name = input.nama;
+        newDataMahasiswa.course = input.course;
+        newDataMahasiswa.score = input.score;
+        setDataMahasiswa([...dataMahasiswa]);
+        success("Data Berhasil Diupdate!");
+        history.push("/tugas15");
+      });
+  };
+
+  const functionDelete = (idMahasiswa) => {
+    axios
+      .delete(
+        `http://backendexample.sanbercloud.com/api/student-scores/${idMahasiswa}`
       )
       .then(() => {
-        dataMahasiswa.find((obj) =>
-          obj.id === currentId ? { ...obj, input } : obj
-        );
-        setDataMahasiswa([...dataMahasiswa]);
-        setCurrentId(null);
+        let newDataMahasiswa = dataMahasiswa.filter((res) => {
+          return res.id !== idMahasiswa;
+        });
+        setDataMahasiswa(newDataMahasiswa);
+        success("Data Berhasil Dihapus!");
       });
   };
 
-  const functionEdit = (id) => {
-    axios
-      .get(`http://backendexample.sanbercloud.com/api/student-scores/${id}`)
-      .then((res) => {
-        let mahasiswa = res.data;
+  const functionEdit = (idMahasiswa) => {};
 
-        setInput({
-          name: mahasiswa.name,
-          course: mahasiswa.course,
-          score: mahasiswa.score,
-        });
-
-        setCurrentId(mahasiswa.id);
-      });
-  };
-
-  const functionDelete = (id) => {
-    axios
-      .delete(`http://backendexample.sanbercloud.com/api/student-scores/${id}`)
-      .then(() => {
-        let newMahasiswa = dataMahasiswa.filter((mahasiswa) => {
-          return mahasiswa.id !== id;
-        });
-
-        setDataMahasiswa([...newMahasiswa]);
-      });
+  const success = (pesan) => {
+    message.success(pesan);
   };
 
   const functions = {
     fetchData,
+    getScore,
     functionSubmit,
     functionUpdate,
-    functionEdit,
     functionDelete,
+    functionEdit,
+    fetchById,
   };
 
   return (
@@ -93,9 +148,9 @@ export const MahasiswaProvider = (props) => {
         setInput,
         currentId,
         setCurrentId,
-        changeColor,
-        setChangeColor,
         functions,
+        fetchStatus,
+        setFetchStatus,
       }}
     >
       {props.children}

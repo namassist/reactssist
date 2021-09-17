@@ -1,13 +1,18 @@
+// Library
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { MahasiswaContext } from "../../Tugas-13/MahasiswaContext";
-import "../styles/navbar.css";
+import { Switch } from "antd";
+// Context
+import { MahasiswaContext } from "../Tugas-13/MahasiswaContext";
+// Style
+import "./styles/navbar.css";
 
 const Navbar = () => {
-  const { changeColor } = useContext(MahasiswaContext);
+  const { changeColor, functions } = useContext(MahasiswaContext);
+  const { functionChangeColor } = functions;
 
   return (
-    <nav className={changeColor ? "active" : ""}>
+    <nav className={changeColor ? "dark" : ""}>
       <ul>
         <li>
           <Link to="/">Tugas 9</Link>
@@ -27,7 +32,18 @@ const Navbar = () => {
         <li>
           <Link to="/tugas14">Tugas 14</Link>
         </li>
+        <li>
+          <Link to="/tugas15">Tugas 15</Link>
+        </li>
       </ul>
+      <div className="toogle-switch">
+        <Switch
+          onClick={functionChangeColor}
+          checkedChildren="Dark"
+          unCheckedChildren="White"
+          defaultChecked={false}
+        />
+      </div>
     </nav>
   );
 };

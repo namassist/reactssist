@@ -28,33 +28,12 @@ body {
   padding: 10px 20px;
 }
 
-.content button {
+.top-content button {
   margin-top: 20px;
 }
 
-.header {
+.text-header {
   text-align: center;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-th {
-  text-align: left;
-}
-
-tr {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-button:first-child {
-  margin-right: 5px;
-}
-
-form {
-  padding: 20px 15px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .form-group {

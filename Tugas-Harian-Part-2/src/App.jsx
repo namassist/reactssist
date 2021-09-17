@@ -1,6 +1,6 @@
 // Library
 import React from "react";
-import Routes from "./Tugas-14/routes/Routes";
+import Routes from "./Tugas-14/Routes";
 
 // Components
 // import Tugas9 from "./Tugas-9/Tugas9";

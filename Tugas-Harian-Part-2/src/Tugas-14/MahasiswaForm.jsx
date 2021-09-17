@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useHistory, useParams } from "react-router";
-import { MahasiswaContext } from "../../Tugas-13/MahasiswaContext";
+import { MahasiswaContext } from "../Tugas-13/MahasiswaContext";
 import axios from "axios";
 
 const MahasiswaForm = () => {
@@ -13,29 +13,22 @@ const MahasiswaForm = () => {
 
   useEffect(() => {
     if (id !== undefined) {
-      const fetchData = async () => {
-        try {
-          axios
-            .get(
-              `http://backendexample.sanbercloud.com/api/student-scores/${id}`
-            )
-            .then((res) => {
-              let mahasiswa = res.data;
+      const fetchDataById = () => {
+        axios
+          .get(`http://backendexample.sanbercloud.com/api/student-scores/${id}`)
+          .then((res) => {
+            let mahasiswa = res.data;
 
-              setInput({
-                name: mahasiswa.name,
-                course: mahasiswa.course,
-                score: mahasiswa.score,
-              });
-
-              setCurrentId(mahasiswa.id);
+            setInput({
+              name: mahasiswa.name,
+              course: mahasiswa.course,
+              score: mahasiswa.score,
             });
-        } catch (error) {
-          console.log(error.message);
-        }
-      };
 
-      fetchData();
+            setCurrentId(mahasiswa.id);
+          });
+      };
+      fetchDataById();
     } else {
       setInput({
         name: "",
