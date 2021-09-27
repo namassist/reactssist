@@ -19,19 +19,8 @@ const theme = createTheme({
 });
 
 const MovieList = () => {
-  const {
-    data,
-    // setData,
-    fetchStatus,
-    setFetchStatus,
-    // searchStatus,
-    // setSearchStatus,
-    // currentId,
-    // setCurrentId,
-    // input,
-    // setInput,
-    functions,
-  } = useContext(MovieAppContext);
+  const { data, fetchStatus, setFetchStatus, functions } =
+    useContext(MovieAppContext);
 
   const { fetchData, functionDelete } = functions;
 

@@ -2,6 +2,7 @@
 import React from "react";
 import { Redirect } from "react-router";
 import { MovieAppProvider } from "../contexts/MovieContext";
+import { GameAppProvider } from "../contexts/GameContext";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Components
@@ -40,50 +41,52 @@ export const Routes = () => {
   return (
     <Router>
       <MovieAppProvider>
-        <Switch>
-          <Route exact path="/">
-            <Layout content={<Home />} />
-          </Route>
-          <Route exact path="/movies">
-            <Layout content={<Movies />} />
-          </Route>
-          <Route exact path="/movieDetail/:id">
-            <Layout content={<DetailMovie />} />
-          </Route>
-          <RouteAdmin exact path="/movielist">
-            <Layout content={<MovieList />} />
-          </RouteAdmin>
-          <RouteAdmin exact path="/movie/create">
-            <Layout content={<MovieForm />} />
-          </RouteAdmin>
-          <RouteAdmin exact path="/movie/edit/:id">
-            <Layout content={<MovieForm />} />
-          </RouteAdmin>
-          <Route exact path="/games">
-            <Layout content={<Games />} />
-          </Route>
-          <Route exact path="/gameDetail/:id">
-            <Layout content={<DetailGame />} />
-          </Route>
-          <RouteAdmin exact path="/gamelist">
-            <Layout content={<GameList />} />
-          </RouteAdmin>
-          <RouteAdmin exact path="/game/create">
-            <Layout content={<GameForm />} />
-          </RouteAdmin>
-          <RouteAdmin exact path="/game/edit/:id">
-            <Layout content={<GameForm />} />
-          </RouteAdmin>
-          <RouteLogin exact path="/login">
-            <Layout content={<Login />} />
-          </RouteLogin>
-          <RouteLogin exact path="/register">
-            <Layout content={<Register />} />
-          </RouteLogin>
-          <Route exact path="/changepassword">
-            <Layout content={<ChangePassword />} />
-          </Route>
-        </Switch>
+        <GameAppProvider>
+          <Switch>
+            <Route exact path="/">
+              <Layout content={<Home />} />
+            </Route>
+            <Route exact path="/movies">
+              <Layout content={<Movies />} />
+            </Route>
+            <Route exact path="/movieDetail/:id">
+              <Layout content={<DetailMovie />} />
+            </Route>
+            <RouteAdmin exact path="/movielist">
+              <Layout content={<MovieList />} />
+            </RouteAdmin>
+            <RouteAdmin exact path="/movie/create">
+              <Layout content={<MovieForm />} />
+            </RouteAdmin>
+            <RouteAdmin exact path="/movie/edit/:id">
+              <Layout content={<MovieForm />} />
+            </RouteAdmin>
+            <Route exact path="/games">
+              <Layout content={<Games />} />
+            </Route>
+            <Route exact path="/gameDetail/:id">
+              <Layout content={<DetailGame />} />
+            </Route>
+            <RouteAdmin exact path="/gamelist">
+              <Layout content={<GameList />} />
+            </RouteAdmin>
+            <RouteAdmin exact path="/game/create">
+              <Layout content={<GameForm />} />
+            </RouteAdmin>
+            <RouteAdmin exact path="/game/edit/:id">
+              <Layout content={<GameForm />} />
+            </RouteAdmin>
+            <RouteLogin exact path="/login">
+              <Layout content={<Login />} />
+            </RouteLogin>
+            <RouteLogin exact path="/register">
+              <Layout content={<Register />} />
+            </RouteLogin>
+            <Route exact path="/changepassword">
+              <Layout content={<ChangePassword />} />
+            </Route>
+          </Switch>
+        </GameAppProvider>
       </MovieAppProvider>
     </Router>
   );
