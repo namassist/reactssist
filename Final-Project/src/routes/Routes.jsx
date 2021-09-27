@@ -82,9 +82,9 @@ export const Routes = () => {
             <RouteLogin exact path="/register">
               <Layout content={<Register />} />
             </RouteLogin>
-            <Route exact path="/changepassword">
+            <RouteAdmin exact path="/changepassword">
               <Layout content={<ChangePassword />} />
-            </Route>
+            </RouteAdmin>
           </Switch>
         </GameAppProvider>
       </MovieAppProvider>
