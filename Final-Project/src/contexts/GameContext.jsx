@@ -17,8 +17,8 @@ export const GameAppProvider = (props) => {
     name: "",
     platform: "",
     release: "",
-    singlePlayer: true,
-    multiplayer: true,
+    singlePlayer: false,
+    multiplayer: false,
   });
 
   const fetchData = async (url) => {
@@ -44,7 +44,7 @@ export const GameAppProvider = (props) => {
 
   const fetchById = async (id) => {
     let res = await axios.get(
-      `https://backendexample.sanbersy.com/api/data-movie/${id}`,
+      `https://backendexample.sanbersy.com/api/data-game/${id}`,
       {
         headers: { Authorization: "Bearer" + Cookies.get("token") },
       }
@@ -69,7 +69,7 @@ export const GameAppProvider = (props) => {
     console.log(input);
     axios
       .post(
-        `https://backendexample.sanbersy.com/api/data-movie`,
+        `https://backendexample.sanbersy.com/api/data-game`,
         {
           genre: input.genre,
           image_url: input.image_url,
@@ -97,7 +97,7 @@ export const GameAppProvider = (props) => {
   const functionUpdate = (currentId) => {
     axios
       .put(
-        `https://backendexample.sanbersy.com/api/data-movie/`,
+        `https://backendexample.sanbersy.com/api/data-game/${currentId}`,
         {
           genre: input.genre,
           image_url: input.image_url,
@@ -119,7 +119,7 @@ export const GameAppProvider = (props) => {
 
   const functionDelete = (id) => {
     axios
-      .delete(`https://backendexample.sanbersy.com/api/data-movie/${id}`, {
+      .delete(`https://backendexample.sanbersy.com/api/data-game/${id}`, {
         headers: { Authorization: "Bearer" + Cookies.get("token") },
       })
       .then(() => {

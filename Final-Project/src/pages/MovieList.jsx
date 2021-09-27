@@ -1,11 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useContext } from "react";
 import { useHistory } from "react-router";
 import { DataGrid } from "@mui/x-data-grid";
 import { Button } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { MovieAppContext } from "../contexts/MovieContext";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { MovieAppContext } from "../contexts/MovieContext";
 
 const theme = createTheme({
   palette: {

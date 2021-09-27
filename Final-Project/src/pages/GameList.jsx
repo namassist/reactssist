@@ -18,7 +18,7 @@ const theme = createTheme({
   },
 });
 
-const MovieList = () => {
+const GameList = () => {
   const { data, fetchStatus, setFetchStatus, functions } =
     useContext(GameAppContext);
 
@@ -146,4 +146,4 @@ const MovieList = () => {
   );
 };
 
-export default MovieList;
+export default GameList;

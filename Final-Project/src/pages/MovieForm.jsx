@@ -5,17 +5,8 @@ import { MovieAppContext } from "../contexts/MovieContext";
 import { Typography, Button, Grid, TextField } from "@mui/material";
 
 const MovieForm = () => {
-  const {
-    // data,
-    // setData,
-    // fetchStatus,
-    // setFetchStatus,
-    currentId,
-    setCurrentId,
-    input,
-    setInput,
-    functions,
-  } = useContext(MovieAppContext);
+  const { currentId, setCurrentId, input, setInput, functions } =
+    useContext(MovieAppContext);
 
   const { functionSubmit, fetchById, functionUpdate } = functions;
   let { id } = useParams();

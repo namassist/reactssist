@@ -132,23 +132,10 @@ export const MovieAppProvider = (props) => {
       });
   };
 
-  //   const handleChange = (e) => {
-  //     let value = e.target.value;
-  //     let name = e.target.name;
-  //     let platform = ["is_android_app", "is_ios_app"];
-
-  //     if (platform.indexOf(name) === -1) {
-  //       setInput({ ...input, [name]: value });
-  //     } else {
-  //       setInput({ ...input, [name]: !input[name] });
-  //     }
-  //   };
-
   const functions = {
     functionDelete,
     fetchData,
     fetchById,
-    // handleChange,
     functionSubmit,
     functionUpdate,
   };
